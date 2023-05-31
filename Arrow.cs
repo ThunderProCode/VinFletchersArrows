@@ -16,47 +16,17 @@
 
     public class Arrow
     {
-        // Fields
-        private ArrowheadType arrowheadType;
-        private FletchingType fletchingType;
-        private float length;
+        // Properties
+        public ArrowheadType ArrowheadType { get; set; }
+        public FletchingType FletchingType { get; set; }
+        public float Length { get; set; }
 
         // Constructor
         public Arrow(ArrowheadType arrowheadType, FletchingType fletchingType, float length)
         {
-            this.arrowheadType = arrowheadType;
-            this.fletchingType = fletchingType;
-            this.length = length;
-        }
-
-        public ArrowheadType GetArrowHeadType()
-        {
-            return this.arrowheadType;
-        }
-
-        public void SetArrowHeadType(ArrowheadType NewArrowHeadType)
-        {
-            this.arrowheadType = NewArrowHeadType;
-        }
-
-        public FletchingType GetFletchingType()
-        {
-            return this.fletchingType;
-        }
-
-        public void SetFletchingType(FletchingType NewFletchingType)
-        {
-            this.fletchingType = NewFletchingType;
-        }
-
-        public float GetLength()
-        {
-            return this.length;
-        }
-
-        public void SetLength(float NewLength)
-        {
-            this.length = NewLength;
+            ArrowheadType = arrowheadType;
+            FletchingType = fletchingType;
+            Length = length;
         }
 
         // Method to calculate and return the arrow's cost
@@ -64,9 +34,9 @@
         {
             float arrowheadCost = 0.0f;
             float fletchingCost = 0.0f;
-            float shaftCost = length * 0.05f;
+            float shaftCost = Length * 0.05f;
 
-            switch (arrowheadType)
+            switch (ArrowheadType)
             {
                 case ArrowheadType.Steel:
                     arrowheadCost = 10.0f;
@@ -79,7 +49,7 @@
                     break;
             }
 
-            switch (fletchingType)
+            switch (FletchingType)
             {
                 case FletchingType.Plastic:
                     fletchingCost = 10.0f;
@@ -97,8 +67,7 @@
 
         public override string ToString()
         {
-            return $"{this.arrowheadType}, {this.fletchingType}, {this.length}";
+            return $"{ArrowheadType}, {FletchingType}, {Length}";
         }
-    }   
+    }
 }
-

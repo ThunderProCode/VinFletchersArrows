@@ -29,7 +29,7 @@ namespace Challenge
 
             Arrow NewArrow = new Arrow(HeadType,Fletching,ArrowLenght);
             System.Console.WriteLine(NewArrow.GetCost());
-            System.Console.WriteLine(NewArrow.ToString());
+            // System.Console.WriteLine(NewArrow.ToString());
             
         }
 
