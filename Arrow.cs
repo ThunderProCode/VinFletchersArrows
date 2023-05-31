@@ -29,6 +29,36 @@
             this.length = length;
         }
 
+        public ArrowheadType GetArrowHeadType()
+        {
+            return this.arrowheadType;
+        }
+
+        public void SetArrowHeadType(ArrowheadType NewArrowHeadType)
+        {
+            this.arrowheadType = NewArrowHeadType;
+        }
+
+        public FletchingType GetFletchingType()
+        {
+            return this.fletchingType;
+        }
+
+        public void SetFletchingType(FletchingType NewFletchingType)
+        {
+            this.fletchingType = NewFletchingType;
+        }
+
+        public float GetLength()
+        {
+            return this.length;
+        }
+
+        public void SetLength(float NewLength)
+        {
+            this.length = NewLength;
+        }
+
         // Method to calculate and return the arrow's cost
         public float GetCost()
         {
