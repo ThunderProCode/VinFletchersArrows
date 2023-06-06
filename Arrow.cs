@@ -1,4 +1,6 @@
-﻿namespace Challenge
+﻿using System;
+
+namespace Challenge
 {
     public enum ArrowheadType
     {
@@ -68,6 +70,24 @@
         public override string ToString()
         {
             return $"{ArrowheadType}, {FletchingType}, {Length}";
+        }
+
+        // Static method to create an Elite Arrow
+        public static Arrow CreateEliteArrow()
+        {
+            return new Arrow(ArrowheadType.Steel, FletchingType.Plastic, 95);
+        }
+
+        // Static method to create a Beginner Arrow
+        public static Arrow CreateBeginnerArrow()
+        {
+            return new Arrow(ArrowheadType.Wood, FletchingType.GooseFeathers, 75);
+        }
+
+        // Static method to create a Marksman Arrow
+        public static Arrow CreateMarksmanArrow()
+        {
+            return new Arrow(ArrowheadType.Steel, FletchingType.GooseFeathers, 65);
         }
     }
 }

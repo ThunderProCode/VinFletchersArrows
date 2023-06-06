@@ -4,6 +4,47 @@ namespace Challenge
     {
         public static void Main()
         {
+            
+            System.Console.WriteLine("Choose an arrow type:\n1)Elite Arrow\n2)Beginner Arrow\n3)Marksman Arrow\n4)Custom Arrow\nChoose an option: ");            
+            string input = Console.ReadLine();
+            int option;
+            while(!(Int32.TryParse(input, out option)))
+            {
+                input = Console.ReadLine();
+            }
+
+            Arrow arrow;
+            switch(option)
+            {
+                case 1:
+                    arrow = Arrow.CreateEliteArrow();
+                    System.Console.WriteLine("Elite Arrow Created");
+                    System.Console.WriteLine(arrow.GetCost());
+                
+                break;
+                case 2:
+                    arrow = Arrow.CreateBeginnerArrow();
+                    System.Console.WriteLine("Beginner Arrow Created");
+                    System.Console.WriteLine(arrow.GetCost());
+                break;
+                case 3:
+                    arrow = Arrow.CreateMarksmanArrow();
+                    System.Console.WriteLine("Marksman Arrow Created");
+                    System.Console.WriteLine(arrow.GetCost());
+                break;
+                case 4:
+                    CustomArrow();
+                break;
+                default:
+                    System.Console.WriteLine("Invalid Option");
+                break;
+            }
+
+        }
+
+
+        public static void CustomArrow ()
+        {
             System.Console.WriteLine("Pick an arrowhead:\n1)Steel\n2)Wood\n3)Obsidian\nChoose an option: ");
             ArrowheadType HeadType = ArrowheadType.Wood;
 
@@ -29,8 +70,6 @@ namespace Challenge
 
             Arrow NewArrow = new Arrow(HeadType,Fletching,ArrowLenght);
             System.Console.WriteLine(NewArrow.GetCost());
-            // System.Console.WriteLine(NewArrow.ToString());
-            
         }
 
         public static ArrowheadType GetArrowHead(int ArrowHeadNum)
